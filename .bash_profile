@@ -18,11 +18,8 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 # The original version is saved in .bash_profile.pysave
 PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
 
-
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-
-export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Code
 
 # has to be done manually for some reason

@@ -1,0 +1,6 @@
+#!/bin/bash
+# This hook is sourced after a new virtualenv is activated.
+proj_name=$(basename $VIRTUAL_ENV)
+mkdir $PROJECT_HOME/$proj_name
+add2virtualenv $PROJECT_HOME/$proj_name
+cd $PROJECT_HOME/$proj_name

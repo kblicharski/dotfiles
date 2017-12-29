@@ -1,0 +1,10 @@
+#!/bin/bash
+# This hook is sourced after every virtualenv is activated.
+proj_name=$(basename $VIRTUAL_ENV)
+cd $PROJECT_HOME/$proj_name
+
+if [ "$proj_name" == "maptrek" ];
+then
+    export DJANGO_SETTINGS_MODULE="MapTrek.settings.local"
+fi
+

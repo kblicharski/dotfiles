@@ -1,10 +1,23 @@
 #!/bin/bash
 # This hook is sourced after every virtualenv is activated.
 proj_name=$(basename $VIRTUAL_ENV)
-cd $PROJECT_HOME/$proj_name
 
+# Export project global variables if needed
 if [ "$proj_name" == "maptrek" ];
 then
     export DJANGO_SETTINGS_MODULE="MapTrek.settings.local"
 fi
+
+# Change default behavior of cd to go to venv root
+cd () {
+    if (( $# == 0 ))
+    then
+        builtin cd $PROJECT_HOME/$proj_name
+    else
+        builtin cd "$@"
+    fi
+}
+
+# Change directories into our project
+cd
 

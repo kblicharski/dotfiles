@@ -1,0 +1,97 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Kevin Blicharski
+	email = blicharskikevin@gmail.com
+[core]
+	editor = vim
+[alias]
+    ###########
+    # LOGGING #
+    ###########
+    # Default short git log
+    le = log --oneline --decorate
+    # Displays a pretty graph of commit history
+    wow = log --all --graph --decorate --oneline --simplify-by-decoration
+    # Displays a BIG pretty graph of commit history
+    WOW = log --all --graph --decorate --oneline
+    # List commits in short form, with colors and branch/tag annotations
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    # List commits showing changed files
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat 
+    # List oneline commits showing dates
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    # List oneline commits showing relative dates
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    # List with no colors
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+    ##########
+    # BASICS #
+    ##########
+    # Add 
+    a = add 
+    aa = add .
+
+    # Branch
+    br = branch
+
+    # Commit
+    c = commit
+    cm = commit -m
+    ca = "!git add -A && git commit -m"
+
+    # Clone
+    cl = clone
+
+    # Checkout
+    co = checkout 
+
+    # Status 
+    s = status
+    
+    # Diff
+    d = diff --word-diff 
+    dc = diff --cached
+
+    # Stash
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+    sp = stash pop
+
+    # Destage file
+    rf = rm --cached
+
+    # Pull from master
+    pm = pull origin master
+
+    ###########
+    # COMPLEX #
+    ###########
+    # Add in hunks, deciding if you want to commit each.
+    # Useful if you want to commit two different changes to the same
+    # file separately instead of in one big commit.
+    ap = add -p
+
+    # Go to your previous branch and reapply any stashed changes
+    cop = "!git checkout - && git stash pop --quiet"
+
+    # Uncommits from log, but changes are kept in place
+    undo = reset --soft HEAD~1
+
+    # Removes local branches that were deleted in the remote
+    rmlocalslong = "!git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
+    # Similar to above - removes connections but doesn't actually 
+    # delete the removed local branches.
+    rmlocals = "!git remote update --prune && git rmlocalslong"
+
+    # Displays total lines of code written today
+    # TODO: Fix - doesn't work right now, not sure why
+    lines = diff --shortstat "@{0 day ago}"
+
+    edit = commit --amend
+
+    ########
+    # MISC #
+    ########
+    aliaslist = "!git config -l | grep alias | cut -c 7-"

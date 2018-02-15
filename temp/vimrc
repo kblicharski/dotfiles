@@ -1,0 +1,49 @@
+" ln -s ~/.vim/.vimrc ~/.vimrc
+" https://dougblack.io/words/a-good-vimrc.html
+
+" Launch Config
+execute pathogen#infect()
+
+" Colors
+syntax enable 
+
+" Spaces and Tabs
+set tabstop=4               " number of spaces per tab
+set softtabstop=4           " number of spaces in tab when editing
+
+set expandtab               " tabs are spaces
+set shiftwidth=4
+
+" UI Config
+set showcmd                 " show commands in bottom bar
+filetype plugin indent on   " load filetype-specific indent files
+set wildmenu                " visual autocomplete for command menu
+set lazyredraw              " redraw only when needed
+set showmatch               " highlight matching [, {, ( characters
+
+" Searching
+set incsearch               " search as characters are entered
+set hlsearch                " highlight matches
+" turn off highlight with ,<space>
+nnoremap ,<space> :nohlsearch<CR>
+
+" Folding
+setlocal foldmethod=indent
+
+set autoindent 
+set smartindent
+
+" Set text width for auto-wrapping.
+set tw=79
+
+" Remove mappings for arrow keys
+" noremap <Up> <nop>
+" noremap <Down> <nop>
+" noremap <Left> <nop>
+" noremap <Right> <nop>
+
+" inoremap <Up> <nop>
+" inoremap <Down> <nop>
+" inoremap <Left> <nop>
+" inoremap <Right> <nop>
+set number

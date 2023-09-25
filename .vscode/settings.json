@@ -1,0 +1,38 @@
+{
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.untitled.hint": "hidden",
+    // Editor
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.minimap.enabled": false,
+    "editor.rulers": [80, 120],
+    // Files
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    // Python
+    "[python]": {
+        "editor.formatOnSave": true,
+        // To place function args each on a newline, add a trailing comma
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    // JSON
+    // https://marketplace.visualstudio.com/items?itemName=Meezilla.json
+    // TODO(fix): Does not format on save
+    "json.indent": "2",
+    "json.primitiveType": "keep",
+    // Vim
+    // https://marketplace.visualstudio.com/items?itemName=vscodevim.vimm
+    "vim.useCtrlKeys": false,
+    // autoDocstring - Python Docstring Generator
+    // https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
+    // TODO(fix): Not correctly making docs
+    "autoDocstring.docstringFormat": "google",
+    "autoDocstring.customTemplatePath": "C:/Users/kevin/Documents/Code/python-docstring-format.mustache",
+    "autoDocstring.generateDocstringOnEnter": true,
+    "autoDocstring.includeExtendedSummary": true,
+    "autoDocstring.startOnNewLine": true,
+    "autoDocstring.guessTypes": true
+}
